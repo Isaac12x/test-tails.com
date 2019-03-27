@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<div class="columns">
+  <div class="column is-three-fifths is-offset-one-fifth">
+
+    <p class="title is-2">Add a new store</p>
+  <form class="" action="" method="post" novalidate>
+    {{ form.hidden_tag() }}
+
+    <p>{{ form.name.label }}</p>
+    {{ form.name(size="30") }}
+
+    {% for error in form.name.errors %}
+    <span class=""> [ {{ error }} ]</span>
+    {% endfor %}
+
+    <p>{{ form.postcode.label }}</p>
+    {{ form.postcode(size="9") }}
+
+    {% for error in form.postcode.errors %}
+    <span class=""> [ {{ error }} ]</span>
+    {% endfor %}
+
+    <p>{{ form.submit() }}</p>
+  </form>
+</div>
+<div class="column">
+
+</div>
+{% endblock %}
